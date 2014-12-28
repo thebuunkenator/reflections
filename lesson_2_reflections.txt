@@ -126,5 +126,32 @@ git merge --abort
 De wijzigingen van de coins branch worden opgenomen in de master branch. De master branch gaat weer verder. 
 
 
+## Merging 2
+Master wijziging in easy mode opnemen. (je wilt niet easy mode in master opnemen)
+
+eerst naar easy mode
+git checkout easy-mode
+
+dan 
+git merge master easy-mode
+
+
+Er ontstaat nu een coflict
+- deze moet je oplosseen door de file waarin conflict zit te bewerken zoek naar 'HEAD'
+
+
+Daarna:
+- file opslaan
+- gita status #You have unmerged paths.  (fix conflicts and run "git commit")
+- git add <file>
+- git status # je krijgt melding dat de conflicts zijn opgelost, maar dat je nog aan het mergen bent
+- git commit # Merge branch 'master' into easy-mode
+= git log -n 1 # geef laatste wijziging
+
+
+## What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+If git merges automatically when it's sure they are correct, than it will save you time. If it goes wrong a lot of times, you will have find error that didn't exist befor and you are probably better off doing it manually.
+
+
 
 
