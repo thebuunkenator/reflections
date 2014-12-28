@@ -1,0 +1,130 @@
+lesson_2_reflections.txt
+
+repository
+
+bestanden
+.git - verborgen folder
+
+
+aanmaken repository
+git init
+
+git status
+
+
+
+## What happens when you initialize a repository? Why do you need to do it?
+creates a folder .git, and prepares the repository so you can add files to track to it
+
+
+
+Working directory --> staging area --> repository
+First you add file to the staging area. Later you commit the changes. You add file that belong together, so you commit them together.
+
+(one commit per logical change)
+
+git add <filename>
+
+
+
+git init
+git add
+git status
+staging area
+working directory
+
+
+## How is the staging area different from the working directory and the repository? What value do you think it offers?
+the working area are the file actually being edited
+the repository is the area where the different (end)versions are stored.
+The staging area is the in between area, that lets git know which file do need to be trackes for changes, so they will be committed as a logical unit
+
+
+add file form staging area to the repository:
+git commit
+
+Repeat for the other files:
+git add
+git status
+git commit
+git log
+
+
+COmpare working directory to staging aree:
+git diff
+
+Compare staging area to repository (last commit)
+git diff --staging
+
+
+Workflow
+(files staanb in working and staging area en hebben een commit)
+- bewerk file
+- verschil tussen working and staging (gitt diff)
+- bewerkte file naar staging area dmv. gitt add <file>
+- geen verschil meer tussen working and staging area
+- verschil tussen repository en staging area: git diff --staged
+- toevoegen aan repository: git commit
+
+
+discard all changed (restore staging area)
+git reset --hard
+
+
+## How can you use the staging area to make sure you have one commit per logical change?
+by check what has been changed in working directy
+By adding only the file that have been changed concerning that specific logical change
+
+
+# Branches
+What branch am I?
+git branch
+
+Create new branch
+git branch <name>
+
+activate branch
+git checkout <name>
+
+als je nu git branch doet, zie je dat de niuwe branch
+
+## What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+- create a branch when you're starting on a different piece of work, doing something different
+- making different versions (easy mode, italian,...)
+- making expiremental branch (you expect them to break)
+- making unique featur branches (you can make them public, but this isn't production quality)
+- fix a bug
+- making versions for different platforms, which share a lot of code
+- master branch: production branch, one that always works. and a development branch with work on your project
+- while your making a feature, you need to correct a bug. or when you get bored working on a feature and do something else
+
+## branches and colleboration
+- one person works on bugs
+- the other works on feature.
+
+When bug is fixed you can merge
+
+
+## How do the diagrams help you visualize the branch structure?
+branches can become complicated, and visualizing helps understanding what is happening. 
+
+
+# Merging
+
+Stappen (coins in master integreren):
+1. ga naar de master
+2. git merge coins
+3. git branch -d coins # verwijderwn van de branche coins
+
+Geef alleen de wijziging van deze commit (nodig na een merge omdat je dan heel veel wijzigingen krijgt te zien). Dit zijn de originele wijzigingen
+git show <id>
+
+Als nog wijzigingen hebt, die nog niet zijn doorgevoerd. Krijg je een foutmelding. Je kunt dan je files restoren door:
+git merge --abort
+
+## What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+De wijzigingen van de coins branch worden opgenomen in de master branch. De master branch gaat weer verder. 
+
+
+
+
