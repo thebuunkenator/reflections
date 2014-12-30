@@ -21,3 +21,8 @@
 
 
 ### When would you want to use a remote repository rather than keeping all your work local?
+- when you are not on your own computer
+- when you don't need to do something with your files (compile f.e.)
+- when other people need to see changes immediately
+- 
+
